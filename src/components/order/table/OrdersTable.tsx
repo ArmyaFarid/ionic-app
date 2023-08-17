@@ -161,6 +161,7 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
                 setError('Les données ne peuvent pas être récupérées, réessayez plus tard');
                 console.error('NetworkError:', error);
             });
+        setGroupedOrders(groupOrdersByState(initialState));
     }, [changing, reloadData, searchString]);
 
     const handleDocumentClick = (event: MouseEvent) => {
