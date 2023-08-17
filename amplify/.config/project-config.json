@@ -1,5 +1,5 @@
 {
-  "projectName": "armyaSwipeIonicApp",
+  "projectName": "armyaIonicApp",
   "version": "3.1",
   "frontend": "javascript",
   "javascript": {
@@ -7,7 +7,7 @@
     "config": {
       "SourceDir": "src",
       "DistributionDir": "www",
-      "BuildCommand": "npm run-script dev",
+      "BuildCommand": "npm run-script build",
       "StartCommand": "ionic serve"
     }
   },

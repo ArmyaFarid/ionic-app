@@ -99,7 +99,6 @@ function ResumeBoard() {
 
 
     if (statLoading)  return <LoadingIndicator isLoading={true}></LoadingIndicator>;
-    if (statError) return <p>Error : {statError.message}</p>;
     const stat = statData.orderStats;
 
     {
