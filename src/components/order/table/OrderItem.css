@@ -1,0 +1,50 @@
+/* OrderItem.css */
+
+.order-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.more-button {
+    cursor: pointer;
+    color: var(--ion-color-primary);
+    font-weight: bold;
+    margin-left: auto;
+}
+
+.bubble {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    height: 100%;
+}
+
+
+.bubble-option {
+    cursor: pointer;
+    padding: 6px;
+    border: none;
+    background: none;
+    text-align: left;
+    /*transition: background-color 0.3s;*/
+}
+
+.bubble-option:hover {
+    background-color: #f0f0f0; /* Adjust the color as needed */
+}
+
+.bubble-option.danger {
+    color: red;
+}
+
+.bubble-option.danger:hover {
+    background-color: #f8d7da; /* Adjust the color as needed */
+}
+
+
+/* Adjust these styles as needed */

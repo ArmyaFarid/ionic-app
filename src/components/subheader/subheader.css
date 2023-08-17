@@ -1,0 +1,21 @@
+/* styles.scss */
+.sub-header {
+    background-color: #c24b4b;
+    padding: 10px 16px;
+}
+
+.sub-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sub-header-title {
+    flex-grow: 1;
+    margin-right: 16px;
+}
+
+.sub-header-search {
+    width: 500px; /* Adjust as needed */
+}

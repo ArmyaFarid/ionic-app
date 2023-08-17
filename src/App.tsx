@@ -3,7 +3,7 @@ import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
 import Menu from './components/Menu';
 import Page from './pages/Page';
-
+import HomePage from './pages/home/HomePage';
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -22,10 +22,17 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import LogoutPage from "./pages/LogoutPage";
+import OrdersPage from "./pages/order/OrdersPage";
+import { useQuery, gql } from '@apollo/client';
 
 setupIonicReact();
 
+
+
+
 const App: React.FC = () => {
+
   return (
     <IonApp>
       <IonReactRouter>
@@ -33,10 +40,19 @@ const App: React.FC = () => {
           <Menu />
           <IonRouterOutlet id="main">
             <Route path="/" exact={true}>
-              <Redirect to="/folder/Inbox" />
+              <Redirect to="/home" />
             </Route>
-            <Route path="/folder/:name" exact={true}>
+            <Route path="/page/Inbox" exact={true}>
               <Page />
+            </Route>
+            <Route path="/home" exact={true}>
+              <HomePage />
+            </Route>
+            <Route path="/orders" exact={true}>
+              <OrdersPage />
+            </Route>
+            <Route path="/logout" exact={true}>
+              <LogoutPage />
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>

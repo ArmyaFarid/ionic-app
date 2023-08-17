@@ -1,0 +1,8 @@
+.component-header {
+    display: flex;
+    background: #F5F5F5;
+    height: 60px;
+    justify-content: space-between;
+    border-bottom: 1px solid #E5E5E5;
+
+}

@@ -1,0 +1,51 @@
+.card{
+    width: 255px;
+    height: 160px;
+    background-color: #F0F9FF;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-head{
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
+.card-head h4{
+    /* Commandes */
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #6C6C6C;
+
+}
+
+.card-data{
+    text-align: end;
+    margin-top: -40px;
+    margin-right: 20px;
+}
+
+.card-data h3{
+    /* 243 */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    /* identical to box height */
+    text-transform: uppercase;
+    color: #000000;
+
+}
+
+.resume-card-container{
+    display: flex;
+    justify-content: space-between;
+}
+

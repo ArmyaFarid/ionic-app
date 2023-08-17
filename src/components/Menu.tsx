@@ -7,17 +7,39 @@ import {
   IonListHeader,
   IonMenu,
   IonMenuToggle,
-  IonNote,
+  IonNote
 } from '@ionic/react';
 
+
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import {
+  archiveOutline,
+  archiveSharp, barChartSharp,
+  bookmarkOutline, bookmarkSharp, bookmarksOutline, bookmarksSharp, cashOutline, cashSharp,
+  heartOutline,
+  heartSharp,
+  homeSharp, logOutOutline, logOutSharp,
+  mailOutline,
+  mailSharp, notificationsOutline, notificationsSharp,
+  paperPlaneOutline,
+  paperPlaneSharp, settingsOutline, settingsSharp, statsChartOutline, statsChartSharp, timeOutline, timeSharp,
+  trashOutline,
+  trashSharp,
+  warningOutline,
+  warningSharp
+} from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
   url: string;
   iosIcon: string;
   mdIcon: string;
+  title: string;
+}
+
+interface AppPage2 {
+  url: string;
+  icon: string;
   title: string;
 }
 
@@ -47,8 +69,8 @@ const appPages: AppPage[] = [
     mdIcon: archiveSharp
   },
   {
-    title: 'Trash',
-    url: '/page/Trash',
+    title: 'Logout',
+    url: '/logout',
     iosIcon: trashOutline,
     mdIcon: trashSharp
   },
@@ -60,7 +82,55 @@ const appPages: AppPage[] = [
   }
 ];
 
-const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+
+
+const appPages2:AppPage[] = [
+  {
+    title: 'Dashboard',
+    url: '/',
+    iosIcon: barChartSharp,
+    mdIcon: barChartSharp,
+  },
+  {
+    title: 'Historique',
+    url: '/history',
+    iosIcon: timeOutline,
+    mdIcon: timeSharp,
+  },
+  {
+    title: 'Nos commandes',
+    url: '/orders',
+    iosIcon: bookmarksOutline,
+    mdIcon: bookmarksSharp,
+  },
+  {
+    title: 'Payement',
+    url: '/invoice',
+    iosIcon: cashOutline,
+    mdIcon: cashSharp,
+  },
+  {
+    title: 'Notification',
+    url: '/notification',
+    iosIcon: notificationsOutline,
+    mdIcon: notificationsSharp,
+  },
+  {
+    title: 'Parametres',
+    url: '/settings',
+    iosIcon: settingsOutline,
+    mdIcon: settingsSharp,
+  },
+
+  {
+    title: 'Logout',
+    url: '/logout',
+    iosIcon: logOutOutline,
+    mdIcon: logOutSharp,
+  },
+];
+
+const labels = ['Family'];
 
 const Menu: React.FC = () => {
   const location = useLocation();
@@ -71,7 +141,7 @@ const Menu: React.FC = () => {
         <IonList id="inbox-list">
           <IonListHeader>Inbox</IonListHeader>
           <IonNote>hi@ionicframework.com</IonNote>
-          {appPages.map((appPage, index) => {
+          {appPages2.map((appPage, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>
                 <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
