@@ -64,7 +64,7 @@ const cardData: Card[] = [
 function ResumeBoard() {
     const refContainer = useRef<HTMLDivElement | null>(null);
     const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-    //const [stat, setStat] = useState<Stat | null>(null);
+    const [stat, setStat] = useState<any | null>(null);
 
     const { loading:statLoading, error:statError, data:statData } = useQuery(GET_STATS,{
         variables: { state:"WAITING" },
@@ -94,17 +94,20 @@ function ResumeBoard() {
     //     };
     // }, []);
 
+    useEffect(() => {
+        setStat({
+            numberOfProviders: 12,
+            numberOfOrdersByState: 0,
+            totalCostOfPayedOrders: 0,
+            ordersCount: 1
+        });
+    }, []);
+
 
 
 
 
     if (statLoading)  return <LoadingIndicator isLoading={true}></LoadingIndicator>;
-    const stat = statData.orderStats;
-
-    {
-        !statLoading && console.log(stat["numberOfOrdersByState"]);
-    }
-
 
     return (
         <div className="page-wrapper" ref={refContainer}>

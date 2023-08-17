@@ -6,7 +6,7 @@
     "framework": "ionic",
     "config": {
       "SourceDir": "src",
-      "DistributionDir": "www",
+      "DistributionDir": "dist",
       "BuildCommand": "npm run-script build",
       "StartCommand": "ionic serve"
     }
