@@ -3,7 +3,7 @@ import Api from '../../../helper/Api';
 import ServerErrorComponent from '../../utils/ServerErrorComponent';
 import LoadingIndicator from '../../utils/LoadingIndicator';
 import Row from "./Row";
-import {IonCol, IonGrid, IonLabel, IonList, IonRow} from "@ionic/react";
+import {IonAlert, IonCol, IonGrid, IonLabel, IonList, IonRow} from "@ionic/react";
 import OrderItem from "./OrderItem";
 
 interface OrdersTableProps {
@@ -178,11 +178,13 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
         };
     }, [showBubble, selectedOrderId]);
 
+    const fake = true;
+
     return (
         <>
             {error && <div><ServerErrorComponent retryFetch={retryFetch} /></div>}
 
-            {!error && (
+            {fake && (
 
                 <>
                     {/*<IonGrid >*/}
@@ -216,6 +218,7 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
                     {/*        key={data._id}/>))}*/}
 
                     {/*</IonGrid>*/}
+                    <div>This is fake data</div>
 
                     <IonList>
                         {groupedOrders['WAITING'] && groupedOrders['WAITING'].map((data) => (
